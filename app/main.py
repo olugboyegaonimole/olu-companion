@@ -6,14 +6,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from fastapi import Depends
-
+import os
 
 # Initialize FastAPI app and Jinja2 templates
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 # Database setup (replace with your actual database URI)
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:2Ge0er1917!3@localhost/students_companion"
+SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_URL")
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
