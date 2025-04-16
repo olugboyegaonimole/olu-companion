@@ -10,7 +10,7 @@ import os
 
 # Initialize FastAPI app and Jinja2 templates
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="app/templates")
 
 # Database setup (replace with your actual database URI)
 SQLALCHEMY_DATABASE_URL = os.environ.get("DATABASE_URL")
