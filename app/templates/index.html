@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Resource</title>
 </head>
-<body>
+<body id="top" class="bg-gray-100 text-gray-900">
     <h1>Learning Resource</h1>
+
+    <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search..." required>
+        <button type="submit">Search</button>
+    </form>
 
     {% for category, pages in categories.items() %}
         <h2>{{ category }}</h2>
@@ -17,6 +22,6 @@
         </ul>
     {% endfor %}
     
-    <a href="/">Back to Home</a>
+    <a href="#top" class="text-blue-500 hover:underline">↑ Back to the Top</a>
 </body>
 </html>
