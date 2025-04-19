@@ -1,10 +1,16 @@
 categories = {
+        "100 Choice Quotations for Special Occasions": [
+            {"name": "Inspirational Quotes", "url": "/inspirational_quotes"},
+            {"name": "Love & Friendship Quotes", "url": "/love_friendship_quotes"},
+            {"name": "Success & Ambition Quotes", "url": "/success_ambition_quotes"},
+            {"name": "Birthday & Celebration Quotes", "url": "/birthday_celebration_quotes"},
+            {"name": "Quotes on Life Lessons", "url": "/life_lessons_quotes"}
+        ],
         "Single Words for Phrases and Sentences": [
-            {"name": "Synonyms", "url": "/synonyms"},
             {"name": "Concise Expressions", "url": "/concise_expressions"},
+            {"name": "One-Word Summaries", "url": "/one_word_summaries"},
             {"name": "Word Substitutions", "url": "/word_substitutions"},
-            {"name": "Simplifications", "url": "/simplifications"},
-            {"name": "One-Word Summaries", "url": "/one_word_summaries"}
+            {"name": "Synonyms", "url": "/synonyms"}
         ],
         "Figurative Expressions and Their Explanations": [
             {"name": "Metaphors", "url": "/metaphors"},
@@ -19,13 +25,6 @@ categories = {
             {"name": "Motivational Proverbs", "url": "/motivational_proverbs"},
             {"name": "Humorous Proverbs", "url": "/humorous_proverbs"},
             {"name": "Timeless Sayings", "url": "/timeless_sayings"}
-        ],
-        "100 Choice Quotations for Special Occasions": [
-            {"name": "Inspirational Quotes", "url": "/inspirational_quotes"},
-            {"name": "Love & Friendship Quotes", "url": "/love_friendship_quotes"},
-            {"name": "Success & Ambition Quotes", "url": "/success_ambition_quotes"},
-            {"name": "Birthday & Celebration Quotes", "url": "/birthday_celebration_quotes"},
-            {"name": "Quotes on Life Lessons", "url": "/life_lessons_quotes"}
         ],
         "Small Words for Big Ones": [
             {"name": "Common Short Synonyms", "url": "/common_short_synonyms"},
