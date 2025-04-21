@@ -10,6 +10,9 @@ import os
 from app.data import categories
 from fastapi.responses import HTMLResponse
 
+from fuzzywuzzy import fuzz
+from app.page_index import page_index  # our full-text data with names, content, and urls
+
 
 # Initialize FastAPI app and Jinja2 templates
 app = FastAPI()
@@ -34,22 +37,24 @@ async def search(request: Request, query: str = "", db: Session = Depends(get_db
     query = query.lower()
     results = []
 
-    for section_title, entries in categories.items():
-        matched_items = []
+    matched_items = []
 
-        for item in entries:
-            if query in item["name"].lower():
-                matched_items.append({
-                    "label": item["name"],
-                    "url": item["url"]  # Use directly from the categories data
-                })
+    for item in page_index:
+        name_match = fuzz.partial_ratio(query, item["name"].lower())
+        content_match = fuzz.partial_ratio(query, item["content"].lower())
 
-        if matched_items:
-            results.append({
-                "title": section_title,
-                "category": "Search Match",
-                "items": matched_items
+        if name_match > 80 or content_match > 70:
+            matched_items.append({
+                "label": item["name"],
+                "url": item["url"]
             })
+
+    if matched_items:
+        results.append({
+            "title": "Matching Results",
+            "category": "Search Match",
+            "items": matched_items
+        })
 
     return templates.TemplateResponse("search.html", {
         "request": request,
